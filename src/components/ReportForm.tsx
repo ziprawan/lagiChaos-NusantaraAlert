@@ -134,7 +134,9 @@ export default function ReportForm() {
 
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
           {submitError && (
-            <div className="mb-4 p-3 bg-red-100 text-red-700 border border-red-300 rounded-md text-sm">{submitError}</div>
+            <div className="mb-4 p-3 bg-red-100 text-red-700 border border-red-300 rounded-md text-sm">
+              {submitError}
+            </div>
           )}
           {submitSuccess && (
             <div className="mb-4 p-3 bg-green-100 text-green-700 border border-green-300 rounded-md text-sm">
@@ -155,13 +157,16 @@ export default function ReportForm() {
               onChange={handleInputChange}
               required
               placeholder="Contoh: Banjir di Perumahan Griya Indah"
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700 text-white"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700"
             />
           </div>
 
           {/* Disaster Category */}
           <div>
-            <label htmlFor="disaster_category" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+            <label
+              htmlFor="disaster_category"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            >
               Kategori Bencana <span className="text-red-500">*</span>
             </label>
             <select
@@ -170,7 +175,7 @@ export default function ReportForm() {
               value={formData.disaster_category}
               onChange={handleInputChange}
               required
-              className="text-white w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700 appearance-none"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700 appearance-none"
             >
               {disasterTypesForForm.map((type) => (
                 <option key={type.value} value={type.value}>
@@ -195,7 +200,7 @@ export default function ReportForm() {
                 onChange={handleInputChange}
                 required
                 placeholder="Contoh: Bekasi, Jawa Barat"
-                className="text-white w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700"
               />
             </div>
           </div>
@@ -213,7 +218,7 @@ export default function ReportForm() {
               onChange={handleInputChange}
               required
               placeholder="Nama Anda"
-              className="text-white w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700"
             />
           </div>
 
@@ -230,7 +235,7 @@ export default function ReportForm() {
               required
               rows={3}
               placeholder="Jelaskan kondisi bencana, dampak kerusakan, dan bantuan yang diperlukan..."
-              className="text-white w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none resize-none bg-white dark:bg-gray-700"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none resize-none bg-white dark:bg-gray-700"
             />
           </div>
 
@@ -248,7 +253,7 @@ export default function ReportForm() {
                 multiple
                 accept="image/*,video/*"
                 onChange={(e) => setFiles(e.target.files)}
-                className="text-white w-full pl-10 pr-4 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 dark:file:bg-blue-900 file:text-primary dark:file:text-blue-300 hover:file:bg-blue-100 dark:hover:file:bg-blue-800"
+                className="w-full pl-10 pr-4 py-1.5 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none bg-white dark:bg-gray-700 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-sm file:font-semibold file:bg-blue-50 dark:file:bg-blue-900 file:text-primary dark:file:text-blue-300 hover:file:bg-blue-100 dark:hover:file:bg-blue-800"
               />
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
